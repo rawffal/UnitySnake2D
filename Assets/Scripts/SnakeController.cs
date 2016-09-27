@@ -40,7 +40,7 @@ public class SnakeController : MonoBehaviour {
 
     void Move()
     {
-        // Save the position with the gap
+        // Save the position that has the gap after the head moves
         Vector2 currentPosition = transform.position;
 
         // Move the head
@@ -55,6 +55,8 @@ public class SnakeController : MonoBehaviour {
         // Check if the snake has a tail
         else if (tail.Count > 0)
         {
+            Debug.Log(tail.Count);
+
             tail.Last().position = currentPosition;
             tail.Insert(0, tail.Last());
             tail.RemoveAt(tail.Count - 1);
